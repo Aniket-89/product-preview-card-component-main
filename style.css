@@ -11,6 +11,7 @@ font-family: 'Montserrat', sans-serif; */
     --ff-base: 'Montserrat', sans-serif;
 
     --clr-primary: hsl(158, 36%, 37%);
+    --clr-secondary-1: hsl(158, 36%, 20%);
     --clr-secondary: hsl(30, 38%, 92%);
 
     --clr-neutral-black: hsl(212, 21%, 14%);
@@ -115,16 +116,35 @@ body {
 }
 
 .button {
-    font-size: 1rem;
+    font-size: 0.925rem;
     font-weight: var(--fw-regular);
     color: var(--clr-neutral-white);
+    text-decoration: none;
 
-    padding: .5rem;
+
+    padding: .75rem 1.5rem;
 
     border: none;
-    border-radius: 8px;
-    
+    border-radius: 0.5rem;
+
+    display: inline-flex;
+    justify-content: center;  
+    align-items: center;
+    gap: 0.75rem;
     background-color: var(--clr-primary);
+    cursor: pointer;
+
+}
+
+.button[data-icon="shopping-cart"]::before {
+    content: "";
+    background-image: url(images/icon-cart.svg);
+    width: 15px;
+    height: 16px;
+}
+
+.button:is(:hover, :focus) {
+    background-color: var(--clr-secondary-1);
 
 }
 
